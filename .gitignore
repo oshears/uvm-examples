@@ -1,0 +1,8 @@
+xrun.history
+xrun.log
+xcelium.d
+*.daidir
+csrc
+simv*
+ucli.key
+svlangserver
