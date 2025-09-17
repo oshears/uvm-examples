@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 // `include "./src/GamePackage.sv"
 import GamePackage::NUM_ROWS;
 import GamePackage::NUM_COLS;

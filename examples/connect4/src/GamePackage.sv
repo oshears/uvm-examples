@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 package GamePackage;
 
     localparam int NUM_ROWS = 6;
