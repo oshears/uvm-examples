@@ -8,3 +8,8 @@ ucli.key
 svlangserver
 *.xml
 *.vdb
+uvm-1.2
+*.tar.gz
+*.log
+*.so
+vc_hdrs.h

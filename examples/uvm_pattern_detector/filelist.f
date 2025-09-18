@@ -1,0 +1,11 @@
+./src/Item.sv
+./src/gen_item_seq.sv
+./src/driver.sv
+./src/monitor.sv
+./src/scoreboard.sv
+./src/agent.sv
+./src/env.sv
+./src/base_test.sv
+./src/des_if.sv
+./src/tb.sv
+./src/det_1011.sv
