@@ -6,3 +6,5 @@ csrc
 simv*
 ucli.key
 svlangserver
+*.xml
+*.vdb

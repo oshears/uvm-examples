@@ -7,6 +7,11 @@ class Board;
 
     string boardName;
 
+    // static const NUM_ROWS
+
+    // static const int NUM_ROWS = 6;
+    // static const int NUM_COLS = 7;
+
     function new (string boardName = "Default Board");
         this.boardName = boardName;
         // no need to initialize board since its statically allocated

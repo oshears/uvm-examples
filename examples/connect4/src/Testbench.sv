@@ -31,7 +31,7 @@ module Testbench;
             // int val = $urandom_range(2, 1);
 
             Transaction tr = new();
-            tr.randomize();
+            assert(tr.randomize()); // use assert to ensure randomization succeeded
             $display("col: %d, row: %d, val:%d", tr.col, tr.row, tr.val);
             board.PlaceAtPosition(tr.col, tr.row, tr.val);
         end
