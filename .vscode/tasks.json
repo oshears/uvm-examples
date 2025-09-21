@@ -4,9 +4,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "Build Memory Test",
             "type": "shell",
-            "command": "echo Hello"
+            "command": "module load synopsys/vcs/W-2024.09-SP2 && cd examples/uvm_memory && make all",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
         }
     ]
 }

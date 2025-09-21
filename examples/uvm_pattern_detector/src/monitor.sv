@@ -27,13 +27,13 @@ class monitor extends uvm_monitor;
     // transaction and writes into analysis port when complete
     forever begin
       @ (vif.cb);
-			if (vif.rstn) begin
-				Item item = Item::type_id::create("item");
-				item.in = vif.in;
-				item.out = vif.cb.out;
-				mon_analysis_port.write(item);
+      if (vif.rstn) begin
+        Item item = Item::type_id::create("item");
+        item.in = vif.in;
+        item.out = vif.cb.out;
+        mon_analysis_port.write(item);
               `uvm_info("MON", $sformatf("Saw item %s", item.convert2str()), UVM_HIGH)
-			end
+      end
     end
   endtask
 endclass

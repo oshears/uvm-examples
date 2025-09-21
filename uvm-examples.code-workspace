@@ -1,10 +1,34 @@
 {
 	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "examples/connect4"
-		}
-	]
+        {
+            "path": "."
+        },
+        {
+            "path": "examples/connect4"
+        },
+        {
+            "path": "examples/uvm_pattern_detector"
+        }
+    ],
+	"settings": {
+        "editor.tabSize": 4,
+        "verible.arguments": [
+            "--file_list_path=${workspaceFolder}/verible.filelist"
+        ],
+		// "verilog.includePath": [
+        //     "${workspaceFolder}/uvm-1.2/src",
+        //     "/nas/home/shears/Documents/uvm/uvm-examples/uvm-1.2/src"
+        // ],
+        "verilog.linting.verilator.includePath": [
+            "${workspaceFolder}/uvm-1.2/src/",
+            "/nas/home/shears/Documents/uvm/uvm-examples/uvm-1.2/src",
+            "/nas/home/shears/Documents/uvm/uvm-examples/uvm-1.2/src/"
+        ],
+        "verilog.linting.linter": "none",
+        "verilog.ctags.path": "ctags",
+        "systemverilog.includeIndexing": [
+            "**/*.sv",
+            "**/*.svh"
+        ]
+	}
 }
