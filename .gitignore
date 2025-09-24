@@ -16,3 +16,4 @@ vc_hdrs.h
 DVEfiles
 *.vcd
 *.vpd
+.inter.vpd.uvm

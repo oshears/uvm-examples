@@ -15,7 +15,7 @@ class MemoryTransaction extends uvm_sequence_item;
     rand bit [7:0]  waddr;
     rand bit [31:0] wdata;
     rand bit [7:0]  raddr;
-    rand bit [31:0] rdata;
+    bit [31:0] rdata;
     rand bit        we;
 
     virtual function string convert2str();
@@ -27,8 +27,9 @@ class MemoryTransaction extends uvm_sequence_item;
     constraint address_constraint {
         waddr inside {[0:255]};
         waddr % 4 == 0;
-        raddr inside {[0:255]};
-        raddr % 4 == 0;
+        raddr == waddr;
+        // raddr inside {[0:255]};
+        // raddr % 4 == 0;
         wdata inside {[0:15]};
     };
 
@@ -48,6 +49,15 @@ interface MemoryInterface (input bit clk);
         output rdata,
         input wdata,
         input we
+    );
+
+    modport TB (
+        input clk,
+        output waddr,
+        output raddr,
+        input rdata,
+        output wdata,
+        output we
     );
 
     clocking cb @(posedge clk);
@@ -96,10 +106,15 @@ class MemoryDriver extends uvm_driver #(MemoryTransaction);
     vif.cb.wdata <= m_item.wdata;
     vif.cb.we <= m_item.we;
     vif.cb.raddr <= m_item.raddr;
+
+    @(vif.cb);
+    vif.cb.we <= 0;
+    for(int i = 0; i < 5; i++) begin
+      @(vif.cb);
+    end
     @(vif.cb);
     vif.cb.waddr <= 0;
     vif.cb.wdata <= 0;
-    vif.cb.we <= 0;
     vif.cb.raddr <= 0;
 
   endtask
