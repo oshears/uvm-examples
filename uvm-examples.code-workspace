@@ -11,6 +11,9 @@
         },
         {
             "path": "examples/uvm_memory"
+        },
+        {
+            "path": "examples/uvm_fir_filter"
         }
     ],
 	"settings": {
