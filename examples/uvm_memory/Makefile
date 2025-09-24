@@ -6,6 +6,7 @@ build/vcs:
 # 	vcs +ntb_opts uvm -cm_dir coverage_database -cm_hier Testbench -cm line+cond+fsm+tgl+assert -sverilog -full64 -kdb -debug_access+all -line -f filelist.f -top Testbench -o simv_executable
 	vcs -sv_lib /nas/home/shears/Documents/uvm/uvm-examples/uvm_dpi.so \
 	+incdir+${UVM_HOME}/src \${UVM_HOME}/src/uvm.sv \
+	+vcs+dumparrays +vcs+dumpvars+test.vcd \
 	+define+LENGTH=4 -cm_dir coverage_database -cm_hier Testbench -cm line+cond+fsm+tgl+assert \
 	-sverilog -full64 -kdb -debug_access+all -line -f filelist.f -top Testbench -o simv_executable
 
@@ -13,6 +14,8 @@ build/xcelium:
 	
 	xrun -sv -f files.f -access +rwc -cm_name coverage_test -cm_test coverage_test
 
+waves:
+	dve test.vcd
 
 .PHONY: build
 

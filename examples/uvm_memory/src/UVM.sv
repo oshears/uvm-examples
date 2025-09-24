@@ -196,9 +196,9 @@ class BaseMemoryTest extends uvm_test;
 
     // Get virtual IF handle from top level and pass it to everything
     // in env level
-    if (!uvm_config_db#(virtual MemoryInterface)::get(this, "", "vif", vif))
+    if (!uvm_config_db#(virtual MemoryInterface)::get(this, "", "MemoryInterface", vif))
       `uvm_fatal("TEST", "Did not get vif")
-    uvm_config_db#(virtual MemoryInterface)::set(this, "env.agent.*", "vif", vif);
+    uvm_config_db#(virtual MemoryInterface)::set(this, "env.agent.*", "MemoryInterface", vif);
 
     // Setup pattern queue and place into config db
     // uvm_config_db#(bit[`LENGTH-1:0])::set(this, "*", "ref_pattern", pattern);

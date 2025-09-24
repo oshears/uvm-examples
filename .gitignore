@@ -13,3 +13,6 @@ uvm-1.2
 *.log
 *.so
 vc_hdrs.h
+DVEfiles
+*.vcd
+*.vpd

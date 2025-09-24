@@ -15,7 +15,9 @@ module Testbench;
         uvm_config_db#(virtual MemoryInterface)::set(
             null, "uvm_test_top", "MemoryInterface", mem_if
         );
-        run_test("test_memory");
+        run_test("RandomMemoryTest");
     end
+
+    
 
 endmodule;
